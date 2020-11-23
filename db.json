@@ -46,45 +46,10 @@
   "commentaire": [
     {
       "id": 1,
-      "name": "Dr Nabil Meddeb",
-      "username": "nabil_soua12",
-      "email": "nabia.soua@gmail.com",
-      "picture": "dr-meddeb-3-e1428920287840-m7nxk7wu65ooz7o44ccb4s2qepxpn98o5u3r048hs0.jpg",
-      "address": {
-        "street": "Avenue Mohamed Negra , Immeuble Rachik au Dessus Pharmacie Fehr Alouini en face entrée des Bassins des Aghlabides",
-        "city": "Kairouan Nord ",
-        "zipcode": "3140"
-      },
-      "phone": "+216 77 303 333",
-      "speciality":"Chirurgien Généraliste"
-    },
-    {
-      "id": 2,
-      "name": "Mlle Malek LOUATI",
-      "username": "malek_louati1",
-      "email": "malek.louati@gmail.fr",
-      "picture": "29-276-tun.jpg",
-      "address": {
-        "street": "Route el Ain km 0.5, Centre ' Medical City ' à côté de la banque du sang, 1 er étage ",
-        "city": "Sfax Tunisia",
-        "zipcode": "3000"
-      },
-      "phone": "+216 74 491 191",
-      "speciality":"Audioprosthetist"
-    },
-    {
-      "id": 3,
-      "name": "Dr Yamen LABIDI",
-      "username": "yamen_labidi",
-      "picture": "issam_mallouki.jpg",
-      "address": {
-        "street": "Centre Médical IBN ROCHED - 2, Rue 1ère Juin Appt.B-2.12, Rue 1ère Juin Appt.B-2.1 Megrine Coteau",
-        "city": "Ben arous Tunisia",
-        "zipcode": "2033 "
-      },
-      "phone": "+216 71 434 150",
-      "speciality":"Audioprosthetist"
-
+      "id_doctor": "1",
+      "id_user": "5",
+      "nb_stars": "2",
+      "commentaire": "test"
     }
   ]
 }
