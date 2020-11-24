@@ -1,0 +1,41 @@
+<!-- TEAM -->
+<section id="team" data-stellar-background-ratio="1">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6">
+        <div class="about-info">
+          <h2 class="wow fadeInUp" data-wow-delay="0.1s"> Our Doctors</h2>
+        </div>
+      </div>
+      <div class="wow fadeInUp" data-wow-delay="0.8s">
+      </div>
+      <div class="clearfix"></div>
+
+      <div   *ngFor="let doctor of listDoctors; let i= index">
+        <div class="col-md-4 col-sm-6" [routerLink]="['/doctor-details', doctor.id]">
+          <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+            <img src="assets/images/{{doctor.picture}}" class="img-responsive" style="min-height: 500px;" alt="">
+
+            <div class="team-info">
+              <h3>{{doctor.name}}</h3>
+              <p>{{doctor.speciality}}</p>
+              <div class="team-contact-info">
+                <p><i class="fa fa-phone"></i> {{doctor.phone}}</p>
+                <p><i class="fa fa-envelope-o"></i> <a href="#">{{doctor.email}}</a></p>
+              </div>
+              <ul class="social-icon">
+                <li><a href="#" ></a></li>
+                <li><a href="#" ></a></li>
+              </ul>
+            </div>
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>

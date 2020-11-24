@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Doctor} from "../model/doctor";
 import {DoctorService} from "../shared/doctor.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-doctors',
+  templateUrl: './doctors.component.html',
+  styleUrls: ['./doctors.component.css']
 })
-export class HomeComponent implements OnInit {
+export class DoctorsComponent implements OnInit {
   listDoctors: Doctor[];
   constructor(private doctorservice: DoctorService) { }
 
