@@ -1,0 +1,136 @@
+<section id="login" data-stellar-background-ratio="3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6" style="margin-left: 200px;">
+        <!-- CONTACT FORM HERE -->
+        <form id="login-form" role="form" method="post" action="#">
+          <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+
+          </div>
+
+          <div class="wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-6 col-sm-6">
+              <label for="name">Email</label>
+              <input type="text" class="form-control" id="mail" name="name" placeholder="Write your Email">
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <label for="name">Password</label>
+              <input type="password" class="form-control" id="password" name="name" placeholder="Write your Password">
+              <button type="submit" class="form-control" name="submit" style="width: 150px; background-color: #a5c422 ; color: white;  margin-left: 270px; margin-top: -34px; " onmouseover="this.style.background='#4267b2';"  onmouseout="this.style.background='#a5c422';">Login</button>
+            </div>
+
+
+          </div>
+        </form>
+      </div>
+
+
+      </div>
+  </div>
+</section>
+<!-- MAKE AN APPOINTMENT -->
+<section id="appointment" data-stellar-background-ratio="3">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6">
+        <img src="assets/images/appointment-image.jpg" class="img-responsive" alt="">
+      </div>
+
+      <div class="col-md-6 col-sm-6">
+        <!-- CONTACT FORM HERE -->
+        <form id="appointment-form" role="form" method="post" action="#" [formGroup]="formGroup" >
+
+          <!-- SECTION TITLE -->
+          <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+            <h2>Not A Member ?</h2>
+          </div>
+
+          <div class="wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-6 col-sm-6">
+              <label for="name">FirstName</label>
+              <input type="text" class="form-control" id="name" name="name" formControlName="firstname"   placeholder="Your FirstName"  >
+
+              <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="firstname.errors.required">
+                  FirstName is required.
+                </div>
+                <div *ngIf="firstname.errors.minlength">
+                  FirstName must be at least 4 characters long.
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="email">LastName</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname"  placeholder="Your Lastname"  >
+              <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="lastname.errors.required">
+                  LastName is required.
+                </div>
+                <div *ngIf="lastname.errors.minlength">
+                  LastName must be at least 4 characters long.
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="email">E-Mail</label>
+              <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Your E-Mail"  >
+              <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="email.errors.required">
+                  E-Mail is required.
+                </div>
+                <div *ngIf="email.errors.email">
+                  Please provide a valid email address
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="date">Birthdate</label>
+              <input type="date" name="date"    formControlName="birthdate" class="form-control"  >
+              <div *ngIf="birthdate.invalid && (birthdate.dirty || birthdate.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="email.errors.required">
+                  Birthdate is required.
+                </div>
+
+
+              </div>
+            </div>
+
+
+
+            <div class="col-md-12 col-sm-12">
+              <label for="telephone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" formControlName="phone"  placeholder="Phone"  >
+              <label for="telephone">Password</label>
+              <input type="password" class="form-control" id="reg-password"  formControlName="password"   name="password" placeholder="choose your password"  >
+              <label for="telephone">Confirm Password</label>
+              <input type="password" class="form-control" id="regc-password" name="password" placeholder="confirm your password" required >
+              <button type="submit" class="form-control" id="cf-submit" name="submit" (click)="add();">Register</button>
+            </div>
+
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -8,13 +8,17 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorComponent } from './doctor/doctor.component';
+import { SamespecialityComponent } from './samespeciality/samespeciality.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DoctorsComponent,
-    DoctorComponent
+    DoctorComponent,
+    SamespecialityComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

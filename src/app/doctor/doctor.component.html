@@ -12,15 +12,18 @@
           </div>
 
 
-          <h3> {{doctor.name}}</h3>
-          <p>Aenean molestie porttitor lorem sed semper. Aliquam semper iaculis libero, eu finibus ex euismod at. In molestie justo ut egestas porttitor. Phasellus interdum erat eu lectus condimentum euismod. Sed pellentesque fringilla diam vitae congue. Ut rutrum diam nisi, in maximus felis vulputate vitae.</p>
-          <blockquote>Vestibulum gravida rutrum est non volutpat. Morbi imperdiet odio ut tempor vestibulum. Mauris tincidunt vehicula nibh, sodales vehicula erat imperdiet ut.</blockquote>
-          <p>Maecenas eu lorem gravida nisi aliquam porta. Etiam eu tellus enim. Vivamus ligula ex, iaculis a sodales et, placerat eget neque. In porttitor tortor in purus commodo lobortis. Nullam ornare quam ac turpis luctus, commodo facilisis nisi venenatis. Cras a posuere risus.</p>
+          <h3> {{doctor.name}}
+        </h3>
+          <p>{{doctor.address.street}} </p>
+          <p>{{doctor.address.city}} {{doctor.address.zipcode}}</p>
+
+          <blockquote>{{doctor.speciality}}</blockquote>
+
 
           <ul>
-            <li>Phasellus posuere nisi eleifend, vestibulum ipsum eleifend</li>
-            <li>Nulla sapien neque, posuere vitae porta eu</li>
-            <li>Fusce quis enim vel libero pulvinar gravida sed eu justo</li>
+            <li>  <i class="fa fa-phone"></i> {{doctor.phone}}</li>
+            <li> <i class="fa fa-envelope-open"></i> {{doctor.email}}</li>
+
           </ul>
 
           <p>Nunc eget ex sed nisl rhoncus lacinia. Vestibulum porta lectus at est placerat, nec commodo purus dignissim. Suspendisse ac quam in metus laoreet auctor ac quis enim.</p>
@@ -89,3 +92,4 @@
     </div>
   </div>
 </section>
+<app-samespeciality [doctor]="doctor"></app-samespeciality>

@@ -14,7 +14,7 @@ export class DoctorComponent implements OnInit {
 
   ngOnInit(): void {
       this.docSer.afficherdoc(this.service.snapshot.params.id).subscribe((data: Doctor) => this.doctor = data);
-      console.log(this.service.snapshot.params.id);
+
   }
 
 }

@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Dr Nabil Meddeb",
       "username": "nabil_soua12",
-      "email": "nabia.soua@gmail.com",
+      "email": "Nabil.Meddeb@gmail.com",
       "picture": "dr-meddeb-3-e1428920287840-m7nxk7wu65ooz7o44ccb4s2qepxpn98o5u3r048hs0.jpg",
       "address": {
         "street": "Avenue Mohamed Negra , Immeuble Rachik au Dessus Pharmacie Fehr Alouini en face entrée des Bassins des Aghlabides",
@@ -12,7 +12,7 @@
         "zipcode": "3140"
       },
       "phone": "+216 77 303 333",
-      "speciality":"Chirurgien Généraliste"
+      "speciality": "Chirurgien Généraliste"
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
         "zipcode": "3000"
       },
       "phone": "+216 74 491 191",
-      "speciality":"Cardiologist"
+      "speciality": "Cardiologist"
     },
     {
       "id": 3,
@@ -40,8 +40,7 @@
         "zipcode": "2033 "
       },
       "phone": "+216 71 434 150",
-      "speciality":"Audioprosthetist"
-
+      "speciality": "Audioprosthetist"
     },
     {
       "id": 4,
@@ -55,8 +54,7 @@
         "zipcode": "2033 "
       },
       "phone": "+216 71 434 150",
-      "speciality":"Audioprosthetist"
-
+      "speciality": "Audioprosthetist"
     }
   ],
   "commentaire": [
@@ -66,6 +64,35 @@
       "id_user": "5",
       "nb_stars": "2",
       "commentaire": "test"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstname": "chekib",
+      "lastname": "hajji",
+      "birthdate": "16/05/1999",
+      "email": "mohamedchakib.hajji@esprit.tn",
+      "password": "test",
+      "phone": "+21652847468"
+    },
+    {
+      "firstname": "Blanka",
+      "lastname": "Hajji",
+      "birthdate": "2020-11-04",
+      "email": "hajjichakib16@yahoo.com",
+      "password": "a",
+      "phone": "52847468",
+      "id": 2
+    },
+    {
+      "firstname": "Blanka",
+      "lastname": "Hajji",
+      "birthdate": "2020-11-06",
+      "email": "mohamedchakib.hajji@esprit.tn",
+      "password": "e²",
+      "phone": "52847468",
+      "id": 3
     }
   ]
 }
