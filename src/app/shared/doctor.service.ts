@@ -25,6 +25,11 @@ export class DoctorService {
     return this.httpClient.get<Doctor[]>('http://localhost:3000/doctors?speciality=' + specialite)
   }
 
+  login(email,password)
+  {
+    return this.httpClient.get<User[]>('http://localhost:3000/users?email=' + email + "&&password=" + password)
+  }
+
   adduser(u:User)
   {
     return this.httpClient.post("http://localhost:3000/users",u);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DoctorService} from "../shared/doctor.service";
 import {User} from "../model/user";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Doctor} from "../model/doctor";
 
 @Component({
   selector: 'app-users',
@@ -12,6 +13,8 @@ export class UsersComponent implements OnInit {
   listUsers: User[];
   user: User;
   formGroup: FormGroup;
+  loginform:FormGroup;
+  member:User[];
   constructor(private docSer:DoctorService) { }
 
   ngOnInit(): void {
@@ -20,11 +23,14 @@ export class UsersComponent implements OnInit {
       firstname : new FormControl('',[Validators.required,Validators.minLength(4)]),
       lastname: new FormControl('',[Validators.required,Validators.minLength(4)]),
       birthdate: new FormControl('',[Validators.required,Validators.email]),
-    email: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required]),
-    phone: new FormControl('',[Validators.required])
+      email: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required]),
+      phone: new FormControl('',[Validators.required])
     });
-
+    this.loginform=new FormGroup({
+      email : new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required])
+    });
   }
 
   get firstname()
@@ -57,5 +63,18 @@ export class UsersComponent implements OnInit {
     this.docSer.adduser(this.user).subscribe(() => this.listUsers = this.listUsers.filter(user => user.id != this.user.id),);
 
   }
+
+  login(){
+    this.docSer.login(this.loginform.value.email,this.loginform.value.password).subscribe((data: User[]) => this.member = data);
+    setTimeout(() => {
+      if (this.member.length!=0){
+        alert("Mar7bé");
+      }
+      else {
+        alert("Verifier Vos Parametre");
+      }
+    }, 500);
+  }
+
 
 }

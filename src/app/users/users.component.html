@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-6" style="margin-left: 200px;">
         <!-- CONTACT FORM HERE -->
-        <form id="login-form" role="form" method="post" action="#">
+        <form id="login-form" role="form" method="post" action="#" [formGroup]="loginform">
           <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
 
           </div>
@@ -11,12 +11,12 @@
           <div class="wow fadeInUp" data-wow-delay="0.8s">
             <div class="col-md-6 col-sm-6">
               <label for="name">Email</label>
-              <input type="text" class="form-control" id="mail" name="name" placeholder="Write your Email">
+              <input type="text" class="form-control" id="mail"  formControlName="email" name="name" placeholder="Write your Email">
             </div>
             <div class="col-md-6 col-sm-6">
               <label for="name">Password</label>
-              <input type="password" class="form-control" id="password" name="name" placeholder="Write your Password">
-              <button type="submit" class="form-control" name="submit" style="width: 150px; background-color: #a5c422 ; color: white;  margin-left: 270px; margin-top: -34px; " onmouseover="this.style.background='#4267b2';"  onmouseout="this.style.background='#a5c422';">Login</button>
+              <input type="password" class="form-control" id="password" name="name"  formControlName="password" placeholder="Write your Password">
+              <button type="submit" (click)="login();" class="form-control" name="submit" style="width: 150px; background-color: #a5c422 ; color: white;  margin-left: 270px; margin-top: -34px; " onmouseover="this.style.background='#4267b2';"  onmouseout="this.style.background='#a5c422';">Login</button>
             </div>
 
 
