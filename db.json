@@ -6,6 +6,7 @@
       "username": "nabil_soua12",
       "email": "Nabil.Meddeb@gmail.com",
       "picture": "dr-meddeb-3-e1428920287840-m7nxk7wu65ooz7o44ccb4s2qepxpn98o5u3r048hs0.jpg",
+      "verified": 1,
       "address": {
         "street": "Avenue Mohamed Negra , Immeuble Rachik au Dessus Pharmacie Fehr Alouini en face entrée des Bassins des Aghlabides",
         "city": "Kairouan Nord ",
@@ -20,6 +21,7 @@
       "username": "malek_louati1",
       "email": "malek.louati@gmail.fr",
       "picture": "29-276-tun.jpg",
+      "verified": 1,
       "address": {
         "street": "Route el Ain km 0.5, Centre ' Medical City ' à côté de la banque du sang, 1 er étage ",
         "city": "Sfax Tunisia",
@@ -34,6 +36,7 @@
       "username": "yamen_labidi",
       "picture": "issam_mallouki.jpg",
       "email": "yamen.laabidi@hotmail.fr",
+      "verified": 0,
       "address": {
         "street": "Centre Médical IBN ROCHED - 2, Rue 1ère Juin Appt.B-2.12, Rue 1ère Juin Appt.B-2.1 Megrine Coteau",
         "city": "Ben arous Tunisia",
@@ -48,6 +51,7 @@
       "username": "yamen_labidi",
       "picture": "issam_mallouki.jpg",
       "email": "yamen.laabidi@hotmail.fr",
+      "verified": 0,
       "address": {
         "street": "Centre Médical IBN ROCHED - 2, Rue 1ère Juin Appt.B-2.12, Rue 1ère Juin Appt.B-2.1 Megrine Coteau",
         "city": "Ben arous Tunisia",
@@ -77,22 +81,13 @@
       "phone": "+21652847468"
     },
     {
+      "id": 2,
       "firstname": "Blanka",
       "lastname": "Hajji",
-      "birthdate": "2020-11-04",
+      "birthdate": "2020/11/04",
       "email": "hajjichakib16@yahoo.com",
       "password": "a",
-      "phone": "52847468",
-      "id": 2
-    },
-    {
-      "firstname": "Blanka",
-      "lastname": "Hajji",
-      "birthdate": "2020-11-06",
-      "email": "mohamedchakib.hajji@esprit.tn",
-      "password": "e²",
-      "phone": "52847468",
-      "id": 3
+      "phone": "52847468"
     }
   ]
 }

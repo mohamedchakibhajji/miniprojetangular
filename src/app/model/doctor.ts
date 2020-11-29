@@ -6,6 +6,7 @@ export class Doctor{
   username:string;
   email:string;
   picture:string;
+  verified:number;
   address:Address;
   phone:string;
   speciality:string;

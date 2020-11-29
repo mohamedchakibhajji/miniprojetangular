@@ -7,6 +7,7 @@ import {User} from "../model/user";
   providedIn: 'root'
 })
 export class DoctorService {
+  id:number;
   constructor(private httpClient: HttpClient) { }
 
   afficherdoctor()
@@ -34,4 +35,15 @@ export class DoctorService {
   {
     return this.httpClient.post("http://localhost:3000/users",u);
   }
+
+  updateuser(id,user:User)
+  {
+    return this.httpClient.put("http://localhost:3000/users/"+id,user);
+  }
+  deleteuser(id)
+  {
+    return this.httpClient.delete("http://localhost:3000/users/"+id);
+  }
+
 }
+

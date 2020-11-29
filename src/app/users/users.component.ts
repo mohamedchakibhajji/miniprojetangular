@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {DoctorService} from "../shared/doctor.service";
 import {User} from "../model/user";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Doctor} from "../model/doctor";
 
 @Component({
   selector: 'app-users',
@@ -68,13 +67,21 @@ export class UsersComponent implements OnInit {
     this.docSer.login(this.loginform.value.email,this.loginform.value.password).subscribe((data: User[]) => this.member = data);
     setTimeout(() => {
       if (this.member.length!=0){
-        alert("Mar7bé");
+        var connecteduser = this.member[0];
+        localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
+        var storeduser = JSON.parse(localStorage.getItem("connecteduser"));
+        window.location.reload();
+        window.location.href="http://localhost:4200/home";
       }
       else {
         alert("Verifier Vos Parametre");
       }
     }, 500);
+
+
   }
+
+
 
 
 }
