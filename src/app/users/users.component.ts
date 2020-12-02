@@ -74,7 +74,7 @@ export class UsersComponent implements OnInit {
         window.location.href="http://localhost:4200/home";
       }
       else {
-        alert("Verifier Vos Parametre");
+        alert("Verifier Vos Parametres");
       }
     }, 500);
 

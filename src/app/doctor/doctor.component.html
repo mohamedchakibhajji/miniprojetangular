@@ -1,5 +1,6 @@
 
 <!-- NEWS DETAIL -->
+
 <section id="news-detail" data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row">
@@ -13,7 +14,7 @@
 
 
           <h3> {{doctor.name}}
-            <img  title="Account Verified" src="assets/images/Facebook-Logo-Verified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
+            <img  title="Account Verified" src="assets/images/Facebook-Logo-Vcderified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
         </h3>
           <p>{{doctor.address.street}} </p>
           <p>{{doctor.address.city}} {{doctor.address.zipcode}}</p>
@@ -30,9 +31,8 @@
           <p>Nunc eget ex sed nisl rhoncus lacinia. Vestibulum porta lectus at est placerat, nec commodo purus dignissim. Suspendisse ac quam in metus laoreet auctor ac quis enim.</p>
           <div class="news-social-share">
             <h4>Share this article</h4>
-            <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
-            <a href="#" class="btn btn-success"><i class="fa fa-twitter"></i>Twitter</a>
-            <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>
+            <div  class="btn btn-primary" [socialShare]="'fb'"><i class="fa fa-facebook" style="width: 50px" ></i></div>
+            <div [socialShare]="'tw'" class="btn btn-success"><i class="fa fa-twitter" style="width: 50px"  ></i></div>
           </div>
         </div>
       </div>
@@ -91,6 +91,25 @@
       </div>
 
     </div>
+    <section id="news" data-stellar-background-ratio="2.5">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 col-sm-12">
+            <!-- SECTION TITLE -->
+            <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+              <h2>Recommended For You({{nombr}})</h2>
+            </div>
+          </div>
+          <app-samespeciality [doctor]="doctor" (numberdoc)="nombre($event)"></app-samespeciality>
+
+        </div>
+      </div>
+    </section>
+
   </div>
+
+
 </section>
-<app-samespeciality [doctor]="doctor"></app-samespeciality>
+
+

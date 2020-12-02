@@ -7,15 +7,21 @@ import {DoctorService} from "../shared/doctor.service";
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css']
+
 })
 export class DoctorComponent implements OnInit {
- doctor:Doctor;
+
+  doctor:Doctor;
+ nombr:number;
   constructor(private service: ActivatedRoute , private docSer:DoctorService) { }
 
   ngOnInit(): void {
       this.docSer.afficherdoc(this.service.snapshot.params.id).subscribe((data: Doctor) => this.doctor = data);
     var storeduser = JSON.parse(localStorage.getItem("connecteduser"));
-    console.log(storeduser);
+  }
+
+  nombre(nomb:number){
+    this.nombr=nomb;
   }
 
 }

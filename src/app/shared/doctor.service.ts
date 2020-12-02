@@ -45,5 +45,6 @@ export class DoctorService {
     return this.httpClient.delete("http://localhost:3000/users/"+id);
   }
 
+
 }
 

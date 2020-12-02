@@ -51,10 +51,9 @@
         <li><a href="#news" class="smoothScroll">News</a></li>
         <li><a href="#google-map" class="smoothScroll">Contact</a></li>
         <li class="appointment-btn"><a routerLink="/adduser" *ngIf="cnt==0">Login/Register</a></li>
-      <li class="appointment-btn"><a   *ngIf="cnt==1" (click)="sessiondestroy()" routerLink="/home"> 👤</a></li>
-        <li class="appointment-btn"><a   *ngIf="cnt==1" (click)="deleteaccount()" > ✂</a></li>
-        <li class="appointment-btn"><a *ngIf="cnt==1" (click)="sessiondestroy()" routerLink="/home">Disconnect</a></li>
-
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" routerLink="/updateuser">Edit Your Account</a></li>
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" (click)="deleteaccount()" >Delete Your Account</a></li>
+        <li class="dropdown-item" type="button"><a *ngIf="cnt==1" (click)="sessiondestroy()" routerLink="/home">Disconnect</a></li>
       </ul>
     </div>
 
@@ -147,4 +146,5 @@
 
     </div>
   </div>
+
 </footer>

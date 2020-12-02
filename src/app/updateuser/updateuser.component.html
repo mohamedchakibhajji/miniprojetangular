@@ -1,0 +1,64 @@
+
+<!-- MAKE AN APPOINTMENT -->
+<section id="appointment" data-stellar-background-ratio="3">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6">
+        <img src="assets/images/appointment-image.jpg" class="img-responsive" alt="">
+      </div>
+
+      <div class="col-md-6 col-sm-6">
+        <!-- CONTACT FORM HERE -->
+        <form id="appointment-form" role="form" method="post" action="#" [formGroup]="formGroup" >
+
+          <!-- SECTION TITLE -->
+          <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+            <h2>Edit Your Informations</h2>
+          </div>
+
+          <div class="wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-6 col-sm-6">
+              <label for="name">FirstName</label>
+              <input type="text" class="form-control" id="name" name="name" formControlName="firstname"   placeholder="Your FirstName"  placeholder={{firstname}}  >
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="email">LastName</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname"  placeholder="Your Lastname"  placeholder={{lastname}}>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="email">E-Mail</label>
+              <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Your E-Mail"  placeholder={{email}}  >
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <label for="date">Birthdate</label>
+              <input type="date" name="date"   onfocus="(this.type='birthdate')"  formControlName="birthdate" class="form-control"   placeholder={{birthdate}}>
+            </div>
+
+
+
+            <div class="col-md-12 col-sm-12">
+              <label for="telephone">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" formControlName="phone"  placeholder="Phone"   placeholder={{phone}} >
+              <label for="telephone">Password</label>
+              <input type="password" class="form-control" id="reg-password"  formControlName="password"   name="password" placeholder="edit your password" >
+              <label for="telephone">Confirm Password</label>
+              <input type="password" class="form-control" id="regc-password" name="password" placeholder="confirm your password" required >
+              <button type="submit" class="form-control" id="cf-submit" name="submit" (click)="updateuser();">Register</button>
+            </div>
+
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

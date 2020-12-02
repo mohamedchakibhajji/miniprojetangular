@@ -10,6 +10,9 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { SamespecialityComponent } from './samespeciality/samespeciality.component';
 import { UsersComponent } from './users/users.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { NgxSocialShareModule } from 'ngx-social-share';
+import { CommentairesComponent } from './commentaires/commentaires.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +21,19 @@ import { UsersComponent } from './users/users.component';
     DoctorsComponent,
     DoctorComponent,
     SamespecialityComponent,
-    UsersComponent
+    UsersComponent,
+    UpdateuserComponent,
+    CommentairesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxSocialShareModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
