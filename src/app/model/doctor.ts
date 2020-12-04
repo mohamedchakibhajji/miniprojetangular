@@ -10,4 +10,5 @@ export class Doctor{
   address:Address;
   phone:string;
   speciality:string;
+  aboutme:string;
 }

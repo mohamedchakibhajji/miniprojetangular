@@ -14,12 +14,12 @@
 
 
           <h3> {{doctor.name}}
-            <img  title="Account Verified" src="assets/images/Facebook-Logo-Vcderified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
+            <img  title="Account Verified" src="assets/images/Facebook-Logo-Verified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
         </h3>
           <p>{{doctor.address.street}} </p>
           <p>{{doctor.address.city}} {{doctor.address.zipcode}}</p>
 
-          <blockquote>{{doctor.speciality}}</blockquote>
+
 
 
           <ul>
@@ -27,10 +27,8 @@
             <li> <i class="fa fa-envelope-open"></i> {{doctor.email}}</li>
 
           </ul>
-
-          <p>Nunc eget ex sed nisl rhoncus lacinia. Vestibulum porta lectus at est placerat, nec commodo purus dignissim. Suspendisse ac quam in metus laoreet auctor ac quis enim.</p>
-          <div class="news-social-share">
-            <h4>Share this article</h4>
+             <div class="news-social-share">
+            <h4>Share this Doctor</h4>
             <div  class="btn btn-primary" [socialShare]="'fb'"><i class="fa fa-facebook" style="width: 50px" ></i></div>
             <div [socialShare]="'tw'" class="btn btn-success"><i class="fa fa-twitter" style="width: 50px"  ></i></div>
           </div>
@@ -40,52 +38,14 @@
       <div class="col-md-4 col-sm-5">
         <div class="news-sidebar">
           <div class="news-author">
-            <h4>About the author</h4>
-            <p>Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque.</p>
+            <h4>About Me</h4>
+            <p>{{doctor.aboutme}}</p>
           </div>
 
-          <div class="recent-post">
-            <h4>Recent Posts</h4>
-
-            <div class="media">
-              <div class="media-object pull-left">
-                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="#">Introducing a new healing process</a></h4>
-              </div>
-            </div>
-
-            <div class="media">
-              <div class="media-object pull-left">
-                <a href="#"><img src="images/news-image.jpg" class="img-responsive" alt=""></a>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="#">About Amazing Technology</a></h4>
-              </div>
-            </div>
-          </div>
-
-          <div class="news-categories">
-            <h4>Categories</h4>
-            <li><a href="#"><i class="fa fa-angle-right"></i> Dental</a></li>
-            <li><a href="#"><i class="fa fa-angle-right"></i> Cardiology</a></li>
-            <li><a href="#"><i class="fa fa-angle-right"></i> Health</a></li>
-            <li><a href="#"><i class="fa fa-angle-right"></i> Consultant</a></li>
-          </div>
-
-          <div class="news-ads sidebar-ads">
-            <h4>Sidebar Banner Ad</h4>
-          </div>
 
           <div class="news-tags">
-            <h4>Tags</h4>
-            <li><a href="#">Pregnancy</a></li>
-            <li><a href="#">Health</a></li>
-            <li><a href="#">Consultant</a></li>
-            <li><a href="#">Medical</a></li>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Social</a></li>
+            <h4>Speciality</h4>
+            <li><a href="#">{{doctor.speciality}}</a></li>
           </div>
         </div>
       </div>

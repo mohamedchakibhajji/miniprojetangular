@@ -1,10 +1,10 @@
 <!-- NEWS -->
 
 
-      <div class="col-md-4 col-sm-6"   *ngFor="let doctor of listmemespecialite |  slice:1:4; let i= index">
+      <div class="col-md-4 col-sm-6"   *ngFor="let doctor of listmemespecialite |  slice:0:3; let i= index">
         <!-- NEWS THUMB -->
 
-        <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s" [routerLink]="['/doctor-details', doctor.id]">
+        <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s" (click)="redirect();" [routerLink]="['/doctor-details', doctor.id]">
           <div class="news-info">
             <h3><a [routerLink]="['/doctor-details', doctor.id]">{{doctor.name}}</a></h3>
             <p>{{doctor.address.city}}</p>

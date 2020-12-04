@@ -1,3 +1,5 @@
+
+
 <section id="login" data-stellar-background-ratio="3">
   <div class="container">
     <div class="row">
@@ -22,12 +24,16 @@
 
           </div>
         </form>
+
+
+
       </div>
 
 
       </div>
   </div>
 </section>
+
 <!-- MAKE AN APPOINTMENT -->
 <section id="appointment" data-stellar-background-ratio="3">
   <div class="container">
@@ -97,29 +103,34 @@
             </div>
 
             <div class="col-md-6 col-sm-6">
-              <label for="date">Birthdate</label>
+              <label >Birthdate</label>
               <input type="date" name="date"    formControlName="birthdate" class="form-control"  >
               <div *ngIf="birthdate.invalid && (birthdate.dirty || birthdate.touched)"
                    class="alert alert-danger">
-
-                <div *ngIf="email.errors.required">
+                <div *ngIf="birthdate.errors.required">
                   Birthdate is required.
                 </div>
-
-
               </div>
             </div>
-
-
-
             <div class="col-md-12 col-sm-12">
-              <label for="telephone">Phone Number</label>
-              <input type="tel" class="form-control" id="phone" name="phone" formControlName="phone"  placeholder="Phone"  >
-              <label for="telephone">Password</label>
+              <label >Phone Number</label>
+              <input type="number" class="form-control" id="phone" name="phone" formControlName="phone"  placeholder="Phone"  >
+              <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                   class="alert alert-danger">
+
+                <div *ngIf="phone.errors.required">
+                  phone number is required.
+                </div>
+                <div *ngIf="phone.errors.minlength">
+                  please provide a valid phone number.
+                </div>
+
+              </div>
+              <label >Password</label>
               <input type="password" class="form-control" id="reg-password"  formControlName="password"   name="password" placeholder="choose your password"  >
-              <label for="telephone">Confirm Password</label>
-              <input type="password" class="form-control" id="regc-password" name="password" placeholder="confirm your password" required >
-              <button type="submit" class="form-control" id="cf-submit" name="submit" (click)="add();">Register</button>
+              <label>Confirm Password</label>
+              <input type="password" (focusout)="checkpassword();"  (mouseleave)="showre();" formControlName="confirmpassword" class="form-control" id="regc-password" name="password" placeholder="confirm your password">
+              <button type="submit"  *ngIf="show==1" class="form-control" id="cf-submit" name="submit" (click)="add();">Register</button>
             </div>
 
 
@@ -134,3 +145,4 @@
   </div>
 
 </section>
+

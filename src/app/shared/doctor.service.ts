@@ -21,9 +21,9 @@ export class DoctorService {
   return this.httpClient.get<Doctor>('http://localhost:3000/doctors/' + id);
   }
 
-  listespecialite(specialite)
+  listespecialite(specialite,id)
   {
-    return this.httpClient.get<Doctor[]>('http://localhost:3000/doctors?speciality=' + specialite)
+    return this.httpClient.get<Doctor[]>('http://localhost:3000/doctors?speciality=' + specialite+"&&id_ne="+id)
   }
 
   login(email,password)

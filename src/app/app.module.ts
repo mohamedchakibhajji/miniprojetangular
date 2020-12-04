@@ -13,6 +13,9 @@ import { UsersComponent } from './users/users.component';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
 import { NgxSocialShareModule } from 'ngx-social-share';
 import { CommentairesComponent } from './commentaires/commentaires.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { CommentairesComponent } from './commentaires/commentaires.component';
     ReactiveFormsModule,
     FormsModule,
     NgxSocialShareModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
 
   providers: [],

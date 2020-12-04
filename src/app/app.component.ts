@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "./model/user";
-import {FormGroup} from "@angular/forms";
 import {DoctorService} from "./shared/doctor.service";
+
 
 @Component({
   selector: 'app-root',
@@ -13,21 +13,25 @@ export class AppComponent {
   storeduser: Array<any>;
   id: string;
   cnt: number;
+  firstname:string;
   member:User[];
-  constructor(private docSer:DoctorService) { }
+
+  constructor(private docSer:DoctorService ) { }
+
   ngOnInit() {
+
     this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
     if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {
-      this.id = Object.keys(this.storeduser)[0];
-      if (this.id == "id") {
         this.cnt = 1;
+      var test = localStorage.getItem('connecteduser');
+      interface us {
+        firstname:string;
+      }
+      let obj: us = JSON.parse(test);
+      this.firstname=obj.firstname;
       } else {
         this.cnt = 0;
       }
-    } else {
-      this.cnt = 0;
-    }
-
   }
 
   sessiondestroy() {
