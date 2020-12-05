@@ -7,7 +7,7 @@
       "email": "Nabil.Meddeb@gmail.com",
       "picture": "dr-meddeb-3-e1428920287840-m7nxk7wu65ooz7o44ccb4s2qepxpn98o5u3r048hs0.jpg",
       "verified": 1,
-      "aboutme":"I'm a doctor",
+      "aboutme": "I'm a doctor",
       "address": {
         "street": "Avenue Mohamed Negra , Immeuble Rachik au Dessus Pharmacie Fehr Alouini en face entrée des Bassins des Aghlabides",
         "city": "Kairouan Nord ",
@@ -22,7 +22,7 @@
       "username": "malek_louati1",
       "email": "malek.louati@gmail.fr",
       "picture": "29-276-tun.jpg",
-      "aboutme":"I'm a doctor",
+      "aboutme": "I'm a doctor",
       "verified": 1,
       "address": {
         "street": "Route el Ain km 0.5, Centre ' Medical City ' à côté de la banque du sang, 1 er étage ",
@@ -39,7 +39,7 @@
       "picture": "issam_mallouki.jpg",
       "email": "yamen.laabidi@hotmail.fr",
       "verified": 0,
-      "aboutme":"I'm a doctor",
+      "aboutme": "I'm a doctor",
       "address": {
         "street": "Centre Médical IBN ROCHED - 2, Rue 1ère Juin Appt.B-2.12, Rue 1ère Juin Appt.B-2.1 Megrine Coteau",
         "city": "Ben arous Tunisia",
@@ -55,7 +55,7 @@
       "picture": "9b70476eaae96cc9778e2227031262b3.jpg",
       "email": "mahjoubwassil@hotmail.fr",
       "verified": 0,
-      "aboutme":"I'm a doctor",
+      "aboutme": "I'm a doctor",
       "address": {
         "street": "Centre Médical IBN ROCHED - 2, Rue 1ère Juin Appt.B-2.12, Rue 1ère Juin Appt.B-2.1 Megrine Coteau",
         "city": "Monastir Tunisia",
@@ -69,8 +69,26 @@
     {
       "id": 1,
       "id_doctor": "1",
-      "id_user": "5",
-      "commentaire": "test"
+      "user": {
+        "firstname": "chekib",
+        "lastname": "elhajji",
+        "id": 1
+      },
+      "commentaire": "test",
+      "date": "04/12/2020",
+      "time": "12:25"
+    },
+    {
+      "id": 2,
+      "id_doctor": "1",
+      "user": {
+        "firstname": "chekib",
+        "lastname": "elhajji",
+        "id": 1
+      },
+      "commentaire": "test",
+      "date": "04/12/2020",
+      "time": "12:25"
     }
   ],
   "users": [
@@ -102,15 +120,6 @@
       "id": 3
     },
     {
-      "firstname": "adem.daami@esprit.tn",
-      "lastname": "adem.daami@esprit.tn",
-      "birthdate": "2020-12-25",
-      "email": "adem.daami@esprit.tn",
-      "password": "adem.daami@esprit.tn",
-      "phone": "adem.daami@esprit.tn",
-      "id": 4
-    },
-    {
       "firstname": "ghassen",
       "lastname": "boughzela",
       "birthdate": "2020-12-19",
@@ -118,16 +127,15 @@
       "password": "aze",
       "phone": "52847468",
       "id": 5
-    },
+    }
+  ],
+  "rdv": [
     {
-      "firstname": "adem.daami@esprit.tn",
-      "lastname": "Hajji",
-      "birthdate": "2020-12-11",
-      "email": "hajjichakib16@yahoo.com",
-      "password": "az",
-      "phone": 52847468,
-      "confirmpassword": "az",
-      "id": 6
+      "id": 1,
+      "user_id": 1,
+      "time": "10:12 PM",
+      "date": "05/12/2020",
+      "message": "i'm okey "
     }
   ]
 }

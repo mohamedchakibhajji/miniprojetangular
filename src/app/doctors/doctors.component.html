@@ -1,6 +1,9 @@
 <!-- TEAM -->
+
+
 <section id="team" data-stellar-background-ratio="1">
   <div class="container">
+
     <div class="row">
 
       <div class="col-md-6 col-sm-6">
@@ -8,12 +11,15 @@
           <h2 class="wow fadeInUp" data-wow-delay="0.1s"> Our Doctors</h2>
         </div>
       </div>
-      <div class="wow fadeInUp" data-wow-delay="0.8s">
+      <div class="col-md-6 col-sm-6">
+        <input type="text" class="form-control" (keyup)="search()"  [(ngModel)]="searchinput" name="name" style="margin-left:250px; margin-top:40px; width: 250px; border-radius: 25%;" placeholder="Search ...                                      🔍">
+      </div>
+      <div class="wow fadeInUp"  data-wow-delay="0.8s">
       </div>
       <div class="clearfix"></div>
 
-      <div   *ngFor="let doctor of listDoctors; let i= index">
-        <div class="col-md-4 col-sm-6" [routerLink]="['/doctor-details', doctor.id]">
+      <div *ngFor="let doctor of listDoctors; let i= index" >
+        <div class="col-md-4 col-sm-6 " style="margin-top: 30px;" [routerLink]="['/doctor-details', doctor.id]">
           <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
             <img src="assets/images/{{doctor.picture}}" class="img-responsive" style="min-height: 500px;" alt="">
 
@@ -32,7 +38,6 @@
             <router-outlet></router-outlet>
           </div>
         </div>
-
       </div>
 
 

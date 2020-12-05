@@ -11,8 +11,6 @@
           <div class="news-image">
             <img src="assets/images/{{doctor.picture}}" class="img-responsive" alt="">
           </div>
-
-
           <h3> {{doctor.name}}
             <img  title="Account Verified" src="assets/images/Facebook-Logo-Verified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
         </h3>
@@ -25,12 +23,34 @@
           <ul>
             <li>  <i class="fa fa-phone"></i> {{doctor.phone}}</li>
             <li> <i class="fa fa-envelope-open"></i> {{doctor.email}}</li>
-
+            <div class="news-social-share">
+              <h4>Share this Doctor</h4>
+              <div  class="btn btn-primary" [socialShare]="'fb'"><i class="fa fa-facebook" style="width: 50px" ></i></div>
+              <div [socialShare]="'tw'" class="btn btn-success"><i class="fa fa-twitter" style="width: 50px"  ></i></div>
+            </div>
           </ul>
-             <div class="news-social-share">
-            <h4>Share this Doctor</h4>
-            <div  class="btn btn-primary" [socialShare]="'fb'"><i class="fa fa-facebook" style="width: 50px" ></i></div>
-            <div [socialShare]="'tw'" class="btn btn-success"><i class="fa fa-twitter" style="width: 50px"  ></i></div>
+
+          <div class="col-md-4 col-sm-4">
+
+            <div class="footer-thumb">
+              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Comments</h4>
+              <input type="text" *ngIf="cnt==1" [(ngModel)]="commentaireinput" class="form-control" (keypress)="addcomment($event)" name="name" style="width: 250px; border-radius: 25%;" placeholder="Comment ...    ">
+              <div class="latest-stories" style="margin-top: 20px;" *ngFor="let commentaire of commentaire; let i= index">
+                <div class="stories-image">
+                  <a href="#"><img src="assets/images/news-image.jpg" class="img-responsive" alt=""></a>
+                </div>
+                <div class="stories-info">
+                  <a ><h5>{{commentaire.user.firstname}} {{commentaire.user.lastname}}</h5></a>
+                  <a><h6>{{commentaire.commentaire}}</h6> </a>
+                  <span>{{commentaire.time}} &nbsp; &nbsp; {{commentaire.date}}</span>
+                  <div *ngIf="commentaire.user.id==connecteduser.id">
+                  <br/>
+                  <span><a style="cursor: pointer" (click)="deletecomme(commentaire.id);">Delete</a></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -48,6 +68,50 @@
             <li><a href="#">{{doctor.speciality}}</a></li>
           </div>
         </div>
+        <section id="appointment" data-stellar-background-ratio="1">
+          <button *ngIf="showform==0"  (click)="clickrdv()" class="form-control" id="cf-submit" name="submit">Make An Appointment</button>
+          <div class="container">
+            <div class="row">
+
+              <div class="col-md-6 col-sm-6">
+
+
+                <!-- CONTACT FORM HERE -->
+                <form id="appointment-form"  *ngIf="showform==1"  role="form" method="post" action="#" >
+
+                  <!-- SECTION TITLE -->
+                  <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                    <h2>Make an appointment</h2>
+                  </div>
+
+                  <div class="wow fadeInUp" data-wow-delay="0.4s">
+
+                    <div class="col-md-6 col-sm-6">
+                      <label >Select Time</label>
+                      <input type="time" name="time" value="" class="form-control">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                      <label >Select Date</label>
+                      <input type="date" name="date" value="" class="form-control">
+                    </div>
+
+
+
+                    <div class="col-md-12 col-sm-12">
+                      <label for="Message">Additional Message</label>
+                      <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                       </div>
+                  </div>
+
+                  <button type="submit" class="form-control" (click)="hideform();" id="cf-submit" name="submit" style="width: 100px; margin-left: 200px;">Confirm</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </div>
 
     </div>
@@ -62,14 +126,11 @@
             </div>
           </div>
           <app-samespeciality [doctor]="doctor" (numberdoc)="nombre($event)"></app-samespeciality>
-
         </div>
       </div>
     </section>
 
   </div>
-
-
 </section>
 
 

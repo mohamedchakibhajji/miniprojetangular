@@ -9,6 +9,7 @@
 
 
 <!-- HEADER -->
+
 <header *ngIf="cnt==1">
 
   <div class="container">
@@ -44,6 +45,8 @@
 
     <!-- MENU LINKS -->
     <div class="collapse navbar-collapse">
+
+
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#top" class="smoothScroll">Home</a></li>
         <li><a href="#about" class="smoothScroll">About Us</a></li>
@@ -52,7 +55,7 @@
         <li><a  class="smoothScroll">Contact</a></li>
         <li class="appointment-btn"><a routerLink="/adduser" *ngIf="cnt==0">Login/Register</a></li>
         <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" routerLink="/updateuser">Edit Your Account</a></li>
-        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" (click)="deleteaccount()" >Delete Your Account</a></li>
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" style="cursor: no-drop" (click)="deleteaccount()" >Delete Your Account</a></li>
         <li class="dropdown-item" type="button"><a *ngIf="cnt==1" (click)="sessiondestroy()" routerLink="/home">Disconnect</a></li>
       </ul>
     </div>

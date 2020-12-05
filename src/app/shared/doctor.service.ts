@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Doctor} from "../model/doctor";
 import {User} from "../model/user";
+import {commentaire} from "../model/commentaire";
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,15 @@ export class DoctorService {
     return this.httpClient.get<Doctor[]>("http://localhost:3000/doctors");
   }
 
+  affichercommentaire(id)
+  {
+    return this.httpClient.get<commentaire[]>("http://localhost:3000/commentaire?id_doctor="+id);
+  }
+
+  rechercherdocteur(searchinput)
+  {
+    return this.httpClient.get<Doctor[]>('http://localhost:3000/doctors/?q=' + searchinput);
+  }
 
   afficherdoc(id)
   {
@@ -36,6 +47,11 @@ export class DoctorService {
     return this.httpClient.post("http://localhost:3000/users",u);
   }
 
+  addcommentaire(c:commentaire)
+  {
+    return this.httpClient.post("http://localhost:3000/commentaire",c);
+  }
+
   updateuser(id,user:User)
   {
     return this.httpClient.put("http://localhost:3000/users/"+id,user);
@@ -43,6 +59,10 @@ export class DoctorService {
   deleteuser(id)
   {
     return this.httpClient.delete("http://localhost:3000/users/"+id);
+  }
+
+  deletecommentaire(id){
+    return this.httpClient.delete("http://localhost:3000/commentaire/"+id);
   }
 
 
