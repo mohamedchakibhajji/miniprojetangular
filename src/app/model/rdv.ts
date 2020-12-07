@@ -1,6 +1,9 @@
+import {User} from "./user"
+
 export class rdv{
   id:number;
-  user_id:number;
+  id_doctor:number;
+  user:User;
   time:string;
   date:string;
   message:string;

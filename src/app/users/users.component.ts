@@ -3,6 +3,8 @@ import {DoctorService} from "../shared/doctor.service";
 import {User} from "../model/user";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
+import "../../assets/smtp.js";
+declare let Email: any;
 
 
 @Component({
@@ -112,6 +114,17 @@ export class UsersComponent implements OnInit {
 
   }
 
+motdepasseoublie(){
+  Email.send({
+    Host : "smtp.gmail.com",
+    Username : "mohamedchakib.hajji@esprit.tn",
+    Password : "chekibelhajji2020",
+  To : "siwar.hassen@esprit.tn",
+  From : "Tunisian Health",
+  Subject : "Test",
+  Body : "test"
+  }).then( message => {alert(message); } );
+}
 
 
 }

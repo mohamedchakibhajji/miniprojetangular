@@ -127,15 +127,35 @@
       "password": "aze",
       "phone": "52847468",
       "id": 5
+    },
+    {
+      "firstname": "samar",
+      "lastname": "Romdhani",
+      "birthdate": "1197-05-08",
+      "email": "samar.romdhani@esprit.tn",
+      "password": "sousou",
+      "phone": 51102299,
+      "confirmpassword": "sousou",
+      "id": 6
     }
   ],
   "rdv": [
     {
-      "id": 1,
-      "user_id": 1,
-      "time": "10:12 PM",
-      "date": "05/12/2020",
-      "message": "i'm okey "
+      "time": "08:10",
+      "message": "je suis malade",
+      "date": "1997-05-08",
+      "id_doctor": "2",
+      "user": {
+        "firstname": "samar",
+        "lastname": "Romdhani",
+        "birthdate": "1197-05-08",
+        "email": "samar.romdhani@esprit.tn",
+        "password": "sousou",
+        "phone": 51102299,
+        "confirmpassword": "sousou",
+        "id": 6
+      },
+      "id": 1
     }
   ]
 }
