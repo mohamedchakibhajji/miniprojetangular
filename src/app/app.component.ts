@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+
 import {User} from "./model/user";
 import {DoctorService} from "./shared/doctor.service";
-
 
 @Component({
   selector: 'app-root',

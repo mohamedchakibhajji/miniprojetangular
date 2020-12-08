@@ -4,6 +4,7 @@ import {User} from "../model/user";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import "../../assets/smtp.js";
+import {Doctor} from "../model/doctor";
 declare let Email: any;
 
 
@@ -15,6 +16,7 @@ declare let Email: any;
 export class UsersComponent implements OnInit {
   listUsers: User[];
   user: User;
+  Doctor: Doctor[];
   formGroup: FormGroup;
   loginform:FormGroup;
   member:User[];
@@ -95,15 +97,25 @@ export class UsersComponent implements OnInit {
 
   login(){
     this.docSer.login(this.loginform.value.email,this.loginform.value.password).subscribe((data: User[]) => this.member = data);
+    this.docSer.logindoctor(this.loginform.value.email,this.loginform.value.password).subscribe((data: Doctor[]) => this.Doctor = data);
     setTimeout(() => {
       if (this.member.length!=0){
         var connecteduser = this.member[0];
         localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
-        var storeduser = JSON.parse(localStorage.getItem("connecteduser"));
+
         this.toastr.success('Redirecting ...', 'Successfully Logged In ');
         setTimeout(() => {
         window.location.reload();
         window.location.href="http://localhost:4200/home";
+        }, 2500);
+      }
+      else if(this.Doctor.length!=0){
+        var connecteddoctor = this.Doctor[0];
+        localStorage.setItem("connecteduser", JSON.stringify(connecteddoctor));
+        this.toastr.success('Redirecting ...', 'Successfully Logged In ');
+        setTimeout(() => {
+          window.location.reload();
+          window.location.href="http://localhost:4200/home";
         }, 2500);
       }
       else {
