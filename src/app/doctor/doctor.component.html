@@ -9,13 +9,13 @@
         <!-- NEWS THUMB -->
         <div class="news-detail-thumb">
           <div class="news-image">
-            <img src="assets/images/{{doctor.picture}}" class="img-responsive" alt="">
+            <img src="http://localhost/uploads/{{doctor.picture}}" class="img-responsive" alt="">
           </div>
           <h3> {{doctor.name}}
-            <img  title="Account Verified" src="assets/images/Facebook-Logo-Verified-Badge-PNG.png" style="width: 40px; height: 40px;" *ngIf="doctor.verified==1">
+            <img  title="Account Verified" src="assets/images/logo_cnam.png" style="width: 100px; height: 50px;" *ngIf="doctor.cnam!=null">
         </h3>
-          <p>{{doctor.address.street}} </p>
-          <p>{{doctor.address.city}} {{doctor.address.zipcode}}</p>
+          <p>{{doctor.street}} </p>
+          <p>{{doctor.city}} {{doctor.zipcode}}</p>
 
 
 
@@ -94,6 +94,7 @@
 
                     <div class="col-md-6 col-sm-6">
                       <label >Select Date</label>
+                      <input type="date" name="date" value="" class="form-control"  [(ngModel)]="rdv.date" #date="ngModel"required>
                       <input type="date" name="date" value="" class="form-control"  [(ngModel)]="rdv.date" #date="ngModel"required>
                     </div>
 

@@ -16,6 +16,7 @@ import { CommentairesComponent } from './commentaires/commentaires.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AjouterdocteurComponent } from './ajouterdocteur/ajouterdocteur.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ToastrModule } from 'ngx-toastr';
     SamespecialityComponent,
     UsersComponent,
     UpdateuserComponent,
-    CommentairesComponent
+    CommentairesComponent,
+    AjouterdocteurComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,6 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-
   ],
 
   providers: [],

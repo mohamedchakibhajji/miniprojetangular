@@ -21,7 +21,7 @@
       <div *ngFor="let doctor of listDoctors; let i= index" >
         <div class="col-md-4 col-sm-6 " style="margin-top: 30px;" [routerLink]="['/doctor-details', doctor.id]">
           <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
-            <img src="assets/images/{{doctor.picture}}" class="img-responsive" style="min-height: 500px;" alt="">
+            <img src="http://localhost/uploads/{{doctor.picture}}" class="img-responsive" style="min-height: 500px;" alt="TEst">
 
             <div class="team-info">
               <h3>{{doctor.name}}  <img  title="Account Verified" src="assets/images/Facebook-Logo-Verified-Badge-PNG.png" style="width: 30px; height: 30px;" *ngIf="doctor.verified==1"></h3>

@@ -58,6 +58,12 @@ export class DoctorService {
     return this.httpClient.post("http://localhost:3000/users",u);
   }
 
+  adddoctor(u:Doctor)
+  {
+    return this.httpClient.post("http://localhost:3000/doctors",u);
+  }
+
+
   addrdv(r:rdv)
   {
     return this.httpClient.post("http://localhost:3000/rdv",r);

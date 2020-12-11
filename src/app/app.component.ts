@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {User} from "./model/user";
 import {DoctorService} from "./shared/doctor.service";
+
 
 @Component({
   selector: 'app-root',
@@ -38,6 +39,7 @@ export class AppComponent {
     localStorage.clear();
     window.location.reload();
   }
+
 
 
   deleteaccount() {

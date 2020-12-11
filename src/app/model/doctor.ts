@@ -1,14 +1,17 @@
-import {Address} from "./address";
 
 export class Doctor{
   id:number;
-  name:string;
-  username:string;
-  email:string;
+  name : string;
   picture:string;
-  verified:number;
-  address:Address;
+  email: string;
+  password: string;
   phone:string;
+  confirmpassword:string;
+  aboutme : string;
+  cnam : string;
   speciality:string;
-  aboutme:string;
+  street:string;
+  city:string;
+  zipcode:number;
+
 }

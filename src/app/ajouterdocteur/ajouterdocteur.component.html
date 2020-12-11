@@ -1,0 +1,93 @@
+<!-- MAKE AN APPOINTMENT -->
+<section id="appointment" data-stellar-background-ratio="3">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 col-sm-6">
+        <img src="assets/images/appointment-image.jpg" class="img-responsive" alt="">
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <!-- CONTACT FORM HERE -->
+        <form  #formaapoint="ngForm">
+
+          <!-- SECTION TITLE -->
+          <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+            <h2>Doctor, Join Us</h2>
+
+          </div>
+
+          <div class="wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-12 col-sm-12">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="Doctor.name" #name="ngModel"  placeholder="Dr ....."  >
+
+            </div>
+
+
+            <div class="col-md-12 col-sm-12">
+              <label for="email">E-Mail</label>
+              <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="Doctor.email" #email="ngModel" placeholder="Your E-Mail"  >
+
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+              <label >Phone Number</label>
+              <input type="number" class="form-control" id="phone" name="phone"  [(ngModel)]="Doctor.phone" #phone="ngModel"  placeholder="Phone"  >
+              <label >Password</label>
+              <input type="password" class="form-control" id="reg-password"  [(ngModel)]="Doctor.password" #password="ngModel"   name="password" placeholder="choose your password"  >
+              <label>Confirm Password</label>
+              <input type="password"  class="form-control" id="regc-password"  placeholder="confirm your password">
+              </div>
+            <div class="col-md-4 col-sm-4">
+
+              <label >Picture</label>
+              <input type="file" class="form-control" [(ngModel)]="Doctor.picture" #picture="ngModel" accept="image/png, image/jpeg"  class="dropify"  #File>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+              <label >About Me </label>
+              <textarea type="text" class="form-control" id="aboutme" name="aboutme"  [(ngModel)]="Doctor.aboutme" #aboutme="ngModel"  placeholder="Phone"  ></textarea>
+              <label >CNAM CODE</label>
+              <input type="number" class="form-control" id="cnam"  [(ngModel)]="Doctor.cnam" #cnam="ngModel"  name="cnam" placeholder="choose your password"  >
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <label >City </label>
+              <input type="text" class="form-control" id="city" name="city"  [(ngModel)]="Doctor.city" #city="ngModel" placeholder="Tunis , Tunisia .."  >
+            </div>
+            <div class="col-md-6 col-sm-6">
+            <label >Street</label>
+            <input type="text" class="form-control" id="street"  [(ngModel)]="Doctor.street" #street="ngModel" name="street" placeholder="Streen Name"  >
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <label >Zip Code</label>
+              <input type="number" class="form-control" id="zip"  [(ngModel)]="Doctor.zipcode" #zip="ngModel"   name="zip" placeholder="Zip code"  >
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="select">Select Speciality</label>
+              <select class="form-control"  id="speciality"  [(ngModel)]="Doctor.speciality" #speciality="ngModel"    name="speciality" >
+                <option>General Health</option>
+                <option>Cardiology</option>
+                <option>Dental</option>
+                <option>ALLERGY & IMMUNOLOGY</option>
+                <option>ANESTHESIOLOGY</option>
+                <option>DERMATOLOGY</option>
+                <option>DIAGNOSTIC RADIOLOGY</option>
+                <option>FAMILY MEDICINE</option>
+                <option>NEUROLOGY</option>
+              </select>
+            </div>
+            <button type="submit"  class="form-control"   (click)="upload()" id="cf-submit" name="submit" >Register</button>
+
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+

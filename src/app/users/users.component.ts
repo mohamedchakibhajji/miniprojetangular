@@ -3,9 +3,9 @@ import {DoctorService} from "../shared/doctor.service";
 import {User} from "../model/user";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
-import "../../assets/smtp.js";
 import {Doctor} from "../model/doctor";
-declare let Email: any;
+import {HttpClient, HttpEventType} from "@angular/common/http";
+
 
 
 @Component({
@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
   loginform:FormGroup;
   member:User[];
   show:number;
-  constructor(private docSer:DoctorService, private toastr: ToastrService) { }
+  constructor(private docSer:DoctorService, private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.user = new User();
@@ -126,16 +126,30 @@ export class UsersComponent implements OnInit {
 
   }
 
+  sendmail(){
+    if ((<HTMLInputElement>document.getElementById("mail")).value != ""){
+      this.toastr.success('Mail Sent', 'We Sent An Email to recover your password');
+      this.motdepasseoublie().subscribe(
+        event => {
+        }
+      );
+    }
+    else{
+      this.toastr.warning('Type Your Email', 'Type Your Email to recover your password');
+    }
+
+
+  }
 motdepasseoublie(){
-  Email.send({
-    Host : "smtp.gmail.com",
-    Username : "mohamedchakib.hajji@esprit.tn",
-    Password : "chekibelhajji2020",
-  To : "siwar.hassen@esprit.tn",
-  From : "Tunisian Health",
-  Subject : "Test",
-  Body : "test"
-  }).then( message => {alert(message); } );
+  let r = Math.random().toString(36).substring(7);
+  var inputValue = (<HTMLInputElement>document.getElementById("mail")).value;
+ const url = 'http://localhost/mail.php?code='+r+'&mail='+inputValue;
+  return this.http.post(url, "", {
+   reportProgress: true,
+   observe: 'events'
+ });
+
+
 }
 
 
