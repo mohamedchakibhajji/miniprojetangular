@@ -17,6 +17,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AjouterdocteurComponent } from './ajouterdocteur/ajouterdocteur.component';
+import { CalendrierrdvComponent } from './calendrierrdv/calendrierrdv.component';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { AjouterdocteurComponent } from './ajouterdocteur/ajouterdocteur.compone
     UsersComponent,
     UpdateuserComponent,
     CommentairesComponent,
-    AjouterdocteurComponent
+    AjouterdocteurComponent,
+    CalendrierrdvComponent,
+    UpdatepasswordComponent
   ],
   imports: [
     BrowserModule,

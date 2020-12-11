@@ -33,6 +33,12 @@ export class DoctorService {
     return this.httpClient.get<rdv[]>('http://localhost:3000/rdv?user.id='+idu+'&id_doctor='+iddoc);
   }
 
+  affichermyrdv(date,iddoc)
+  {
+    return this.httpClient.get<rdv[]>('http://localhost:3000/rdv?date='+date+'&id_doctor='+iddoc);
+  }
+
+
   afficherdoc(id)
   {
   return this.httpClient.get<Doctor>('http://localhost:3000/doctors/' + id);
@@ -61,6 +67,22 @@ export class DoctorService {
   adddoctor(u:Doctor)
   {
     return this.httpClient.post("http://localhost:3000/doctors",u);
+  }
+
+  getuser(mail)
+  {
+    return this.httpClient.get<User>('http://localhost:3000/users?email=' + mail)
+  }
+
+  getuserbyphone(phone)
+  {
+    return this.httpClient.get<User>('http://localhost:3000/users?phone=' + phone)
+  }
+
+
+  updatpaseuser(id,password)
+  {
+    return this.httpClient.put("http://localhost:3000/users/"+id,password);
   }
 
 

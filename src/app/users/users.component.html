@@ -89,19 +89,22 @@
 
             <div class="col-md-6 col-sm-6">
               <label for="email">E-Mail</label>
-              <input type="email" class="form-control" id="email" name="email"  formControlName="email" placeholder="Your E-Mail"  >
+              <input type="email" class="form-control" id="email" name="email" (focusout)="mailverification()"  (mouseleave)="mailverification()" formControlName="email" placeholder="Your E-Mail"  >
               <div *ngIf="email.invalid && (email.dirty || email.touched)"
                    class="alert alert-danger">
-
                 <div *ngIf="email.errors.required">
                   E-Mail is required.
                 </div>
                 <div *ngIf="email.errors.email">
                   Please provide a valid email address
                 </div>
-
+              </div>
+              <div *ngIf="affichermailexiste==1" class="alert alert-danger">
+                This  Email Already Existe
               </div>
             </div>
+
+
 
             <div class="col-md-6 col-sm-6">
               <label >Birthdate</label>
@@ -128,7 +131,15 @@
 
               </div>
               <label >Password</label>
-              <input type="password" class="form-control" id="reg-password"  formControlName="password"   name="password" placeholder="choose your password"  >
+              <input type="password" class="form-control" id="reg-password"  formControlName="password"  minlength="5"  name="password" placeholder="choose your password"  >
+              <div  *ngIf="password.touched && password.invalid" >
+                <div *ngIf="password.errors.required  && password.touched" class="alert alert-danger">
+                  Password is required.
+                </div>
+                <div *ngIf="password.errors.minlength  &&  password.touched" class="alert alert-danger">
+                  Please Specify A Valid Password
+                </div>
+              </div>
               <label>Confirm Password</label>
               <input type="password" (focusout)="checkpassword();"  (mouseleave)="showre();" formControlName="confirmpassword" class="form-control" id="regc-password" name="password" placeholder="confirm your password">
               <button type="submit"  *ngIf="show==1" class="form-control" id="cf-submit" name="submit" (click)="add();">Register</button>

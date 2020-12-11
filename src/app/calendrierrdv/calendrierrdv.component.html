@@ -1,0 +1,30 @@
+<div class="col-md-6 col-sm-6">
+  <div class="about-info">
+    <h2 class="wow fadeInUp" data-wow-delay="0.1s"> My Patients : </h2>
+
+  </div>
+</div>
+<div class="col-md-6 col-sm-6">
+  <div class="about-info">
+    <input type="date" name="date" style="margin-left: 390px; margin-top: 40px;" (mouseleave)="affichernewrdv()"  [(ngModel)]="dateinput" class="form-controlwow fadeInUp" data-wow-delay="0.1s" >
+  </div>
+</div>
+
+<table  class="wow fadeInUp table" data-wow-delay="0.1s">
+  <thead>
+  <tr>
+    <th scope="col">Time</th>
+    <th scope="col">Firstname</th>
+    <th scope="col">Lastname</th>
+    <th scope="col">Message</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let rdv of listrdv; let i= index">
+    <th scope="row">{{rdv.time}}</th>
+    <td>{{rdv.user.firstname}}</td>
+    <td>{{rdv.user.lastname}}</td>
+    <td>{{rdv.message}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -52,10 +52,11 @@
         <li><a href="#about" class="smoothScroll">About Us</a></li>
         <li><a href="#doctors" class="smoothScroll" routerLink="/doctors" >Doctors</a></li>
         <li><a href="#news" class="smoothScroll">News</a></li>
-        <li><a  class="smoothScroll"  routerLink="/ajoutdoctor" >Register As A Doctor</a></li>
+        <li><a  class="smoothScroll" *ngIf="cnt==0" routerLink="/ajoutdoctor" >Register As A Doctor</a></li>
         <li class="appointment-btn"><a routerLink="/adduser" *ngIf="cnt==0">Login/Register</a></li>
-        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" routerLink="/updateuser">Edit Your Account</a></li>
-        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1" style="cursor: no-drop" (click)="deleteaccount()" >Delete Your Account</a></li>
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1 && doctorcnt ==1" routerLink="/calendrier">Mes Rendez-vous</a></li>
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1 && doctorcnt == 0" routerLink="/updateuser">Edit Your Account</a></li>
+        <li class="dropdown-item" type="button"><a   *ngIf="cnt==1 &&  doctorcnt == 0" style="cursor: no-drop" (click)="deleteaccount()" >Delete Your Account</a></li>
         <li class="dropdown-item" type="button"><a *ngIf="cnt==1" (click)="sessiondestroy()" routerLink="/home">Disconnect</a></li>
       </ul>
     </div>

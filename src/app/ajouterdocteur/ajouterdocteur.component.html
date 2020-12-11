@@ -19,26 +19,57 @@
           <div class="wow fadeInUp" data-wow-delay="0.8s">
             <div class="col-md-12 col-sm-12">
               <label for="name">Name</label>
-              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="Doctor.name" #name="ngModel"  placeholder="Dr ....."  >
-
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="Doctor.name" #name="ngModel"  placeholder="Dr ....." required minlength="10" >
+           <div  *ngIf="name.touched && name.invalid" >
+                <div *ngIf="name.errors.required  && name.touched" class="alert alert-danger">
+                  Name is required.
+                </div>
+                <div *ngIf="name.errors.minlength  && name.touched" class="alert alert-danger">
+                  Please Specify A Valid Name ("Foulen Ben Foulen")
+                </div>
             </div>
-
+            </div>
 
             <div class="col-md-12 col-sm-12">
               <label for="email">E-Mail</label>
-              <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="Doctor.email" #email="ngModel" placeholder="Your E-Mail"  >
+              <input type="email" class="form-control" id="email" name="email"  [(ngModel)]="Doctor.email" #email="ngModel" placeholder="Your E-Mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+              <div  *ngIf="email.touched && email.invalid" >
 
+
+                <div *ngIf="email.errors.required  && email.touched" class="alert alert-danger">
+                  Email is required.
+                </div>
+                <div *ngIf="email.hasError('pattern')  && email.touched" class="alert alert-danger">
+                  Please Specify A Valid Email
+                </div>
+              </div>
             </div>
 
             <div class="col-md-12 col-sm-12">
               <label >Phone Number</label>
-              <input type="number" class="form-control" id="phone" name="phone"  [(ngModel)]="Doctor.phone" #phone="ngModel"  placeholder="Phone"  >
-              <label >Password</label>
-              <input type="password" class="form-control" id="reg-password"  [(ngModel)]="Doctor.password" #password="ngModel"   name="password" placeholder="choose your password"  >
-              <label>Confirm Password</label>
-              <input type="password"  class="form-control" id="regc-password"  placeholder="confirm your password">
+              <input type="number" class="form-control" id="phone" name="phone"  [(ngModel)]="Doctor.phone" #phone="ngModel"  Validators.pattern="^((\\+216-?)|0)?[0-9]{8}$" placeholder="Phone"  required>
+              <div  *ngIf="phone.touched && phone.invalid" >
+              <div *ngIf="phone.errors.required  && phone.touched" class="alert alert-danger">
+                phone is required.
               </div>
-            <div class="col-md-4 col-sm-4">
+              <div *ngIf="phone.hasError('pattern')  &&  phone.touched" class="alert alert-danger">
+                Please Specify A Valid Password
+              </div>
+            </div>
+              </div>
+
+            <div class="col-md-12 col-sm-12">
+              <label >Password</label>
+              <input type="password" class="form-control" id="reg-password"  [(ngModel)]="Doctor.password" #password="ngModel"   name="password" placeholder="choose your password" minlength="8" required>
+              <div  *ngIf="password.touched && password.invalid" >
+                <div *ngIf="password.errors.required  && password.touched" class="alert alert-danger">
+                  Password is required.
+                </div>
+                <div *ngIf="password.errors.minlength  &&  password.touched" class="alert alert-danger">
+                  Please Specify A Valid Password
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
 
               <label >Picture</label>
               <input type="file" class="form-control" [(ngModel)]="Doctor.picture" #picture="ngModel" accept="image/png, image/jpeg"  class="dropify"  #File>
@@ -46,9 +77,9 @@
 
             <div class="col-md-12 col-sm-12">
               <label >About Me </label>
-              <textarea type="text" class="form-control" id="aboutme" name="aboutme"  [(ngModel)]="Doctor.aboutme" #aboutme="ngModel"  placeholder="Phone"  ></textarea>
+              <textarea type="text" class="form-control" id="aboutme" name="aboutme"  [(ngModel)]="Doctor.aboutme" #aboutme="ngModel"  placeholder="About Me ...."  ></textarea>
               <label >CNAM CODE</label>
-              <input type="number" class="form-control" id="cnam"  [(ngModel)]="Doctor.cnam" #cnam="ngModel"  name="cnam" placeholder="choose your password"  >
+              <input type="number" class="form-control" id="cnam"  [(ngModel)]="Doctor.cnam" [min]="10000000" #cnam="ngModel"  name="cnam" placeholder="Votre Code Cnam"  >
             </div>
             <div class="col-md-6 col-sm-6">
               <label >City </label>
@@ -75,6 +106,7 @@
                 <option>FAMILY MEDICINE</option>
                 <option>NEUROLOGY</option>
               </select>
+            </div>
             </div>
             <button type="submit"  class="form-control"   (click)="upload()" id="cf-submit" name="submit" >Register</button>
 

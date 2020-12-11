@@ -27,9 +27,6 @@ export class AjouterdocteurComponent implements OnInit {
   }
 
   upload(){
-   // setTimeout(() => {
-     // window.location.reload();
-    //}, 3500);
     const file = this.InputFile.nativeElement;
     if (file.files && file.files[0]) {
       this.UploadFile = file.files[0];
@@ -54,6 +51,7 @@ export class AjouterdocteurComponent implements OnInit {
     );
 
   }
+
 
   uploadFile(formData){
     const url = 'http://localhost/upload.php';

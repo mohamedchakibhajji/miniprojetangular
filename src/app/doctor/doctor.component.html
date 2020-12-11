@@ -11,7 +11,7 @@
           <div class="news-image">
             <img src="http://localhost/uploads/{{doctor.picture}}" class="img-responsive" alt="">
           </div>
-          <h3> {{doctor.name}}
+          <h3> Dr {{doctor.name}}
             <img  title="Account Verified" src="assets/images/logo_cnam.png" style="width: 100px; height: 50px;" *ngIf="doctor.cnam!=null">
         </h3>
           <p>{{doctor.street}} </p>
@@ -36,11 +36,9 @@
               <h4 class="wow fadeInUp" data-wow-delay="0.4s">Comments : </h4>
               <input type="text" *ngIf="cnt==1" [(ngModel)]="commentaireinput" class="form-control" (keypress)="addcomment($event)" name="name" style="width: 250px; border-radius: 25%;" placeholder="Comment ...    ">
               <div class="latest-stories" style="margin-top: 20px;" *ngFor="let commentaire of commentaire; let i= index">
-                <div class="stories-image">
-                  <a href="#"><img src="assets/images/news-image.jpg" class="img-responsive" alt=""></a>
-                </div>
+
                 <div class="stories-info">
-                  <a ><h5>{{commentaire.user.firstname}} {{commentaire.user.lastname}}</h5></a>
+                  <a ><h5>{{commentaire.user.firstname}} {{commentaire.user.lastname}} :</h5></a>
                   <a><h6>{{commentaire.commentaire}}</h6> </a>
                   <span>{{commentaire.time}} &nbsp; &nbsp; {{commentaire.date}}</span>
                   <div *ngIf="commentaire.user.id==connecteduser.id">
@@ -94,7 +92,6 @@
 
                     <div class="col-md-6 col-sm-6">
                       <label >Select Date</label>
-                      <input type="date" name="date" value="" class="form-control"  [(ngModel)]="rdv.date" #date="ngModel"required>
                       <input type="date" name="date" value="" class="form-control"  [(ngModel)]="rdv.date" #date="ngModel"required>
                     </div>
 

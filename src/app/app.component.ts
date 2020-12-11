@@ -12,8 +12,10 @@ import {DoctorService} from "./shared/doctor.service";
 export class AppComponent {
   title = 'projet';
   storeduser: Array<any>;
+  doctor:string;
   id: string;
   cnt: number;
+  doctorcnt:number;
   firstname:string;
   member:User[];
 
@@ -23,13 +25,29 @@ export class AppComponent {
 
     this.storeduser = JSON.parse(localStorage.getItem("connecteduser"));
     if ((typeof this.storeduser !== 'undefined' && this.storeduser !== null)) {
+      this.doctor =localStorage.getItem("doctor");
+      if(this.doctor == "YES"){
+        this.doctorcnt=1;
+      }
+      else{
+        this.doctorcnt=0;
+      }
         this.cnt = 1;
       var test = localStorage.getItem('connecteduser');
       interface us {
+        name:string;
         firstname:string;
       }
       let obj: us = JSON.parse(test);
-      this.firstname=obj.firstname;
+      if(this.doctor == "YES"){
+        this.doctorcnt=1;
+        this.firstname="Dr " +obj.name;
+      }
+      else{
+        this.doctorcnt=0;
+        this.firstname=obj.firstname;
+      }
+
       } else {
         this.cnt = 0;
       }
@@ -38,6 +56,7 @@ export class AppComponent {
   sessiondestroy() {
     localStorage.clear();
     window.location.reload();
+    window.location.href="http://localhost:4200/home";
   }
 
 

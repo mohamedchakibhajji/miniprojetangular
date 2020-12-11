@@ -20,6 +20,8 @@ export class UsersComponent implements OnInit {
   formGroup: FormGroup;
   loginform:FormGroup;
   member:User[];
+  us : User;
+  affichermailexiste:number;
   show:number;
   constructor(private docSer:DoctorService, private http: HttpClient, private toastr: ToastrService) { }
 
@@ -102,7 +104,7 @@ export class UsersComponent implements OnInit {
       if (this.member.length!=0){
         var connecteduser = this.member[0];
         localStorage.setItem("connecteduser", JSON.stringify(connecteduser));
-
+        localStorage.setItem("doctor", "NO");
         this.toastr.success('Redirecting ...', 'Successfully Logged In ');
         setTimeout(() => {
         window.location.reload();
@@ -112,6 +114,7 @@ export class UsersComponent implements OnInit {
       else if(this.Doctor.length!=0){
         var connecteddoctor = this.Doctor[0];
         localStorage.setItem("connecteduser", JSON.stringify(connecteddoctor));
+        localStorage.setItem("doctor", "YES");
         this.toastr.success('Redirecting ...', 'Successfully Logged In ');
         setTimeout(() => {
           window.location.reload();
@@ -129,10 +132,16 @@ export class UsersComponent implements OnInit {
   sendmail(){
     if ((<HTMLInputElement>document.getElementById("mail")).value != ""){
       this.toastr.success('Mail Sent', 'We Sent An Email to recover your password');
-      this.motdepasseoublie().subscribe(
+      let r = Math.random().toString(36).substring(7).toUpperCase();
+      this.motdepasseoublie(r).subscribe(
         event => {
         }
       );
+      localStorage.setItem("mail", (<HTMLInputElement>document.getElementById("mail")).value);
+      localStorage.setItem("code", r);
+      setTimeout(() => {
+      window.location.href="http://localhost:4200/updatepassword";
+      }, 1500);
     }
     else{
       this.toastr.warning('Type Your Email', 'Type Your Email to recover your password');
@@ -140,9 +149,19 @@ export class UsersComponent implements OnInit {
 
 
   }
-motdepasseoublie(){
-  let r = Math.random().toString(36).substring(7);
-  var inputValue = (<HTMLInputElement>document.getElementById("mail")).value;
+
+  mailverification(){
+
+    this.docSer.getuser((<HTMLInputElement>document.getElementById("email")).value).subscribe((data: User) => this.us = data);
+   console.log(this.us);
+    if(this.us != null){
+    this.affichermailexiste=1;
+  }
+
+  }
+
+motdepasseoublie(r){
+    var inputValue = (<HTMLInputElement>document.getElementById("mail")).value;
  const url = 'http://localhost/mail.php?code='+r+'&mail='+inputValue;
   return this.http.post(url, "", {
    reportProgress: true,
