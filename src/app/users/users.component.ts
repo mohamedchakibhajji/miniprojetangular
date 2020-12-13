@@ -108,7 +108,7 @@ export class UsersComponent implements OnInit {
         this.toastr.success('Redirecting ...', 'Successfully Logged In ');
         setTimeout(() => {
         window.location.reload();
-        window.location.href="http://localhost:4200/home";
+        window.location.href="http://127.0.0.1:4200/home";
         }, 2500);
       }
       else if(this.Doctor.length!=0){
@@ -118,7 +118,7 @@ export class UsersComponent implements OnInit {
         this.toastr.success('Redirecting ...', 'Successfully Logged In ');
         setTimeout(() => {
           window.location.reload();
-          window.location.href="http://localhost:4200/home";
+          window.location.href="http://127.0.0.1:4200/home";
         }, 2500);
       }
       else {
@@ -133,14 +133,15 @@ export class UsersComponent implements OnInit {
     if ((<HTMLInputElement>document.getElementById("mail")).value != ""){
       this.toastr.success('Mail Sent', 'We Sent An Email to recover your password');
       let r = Math.random().toString(36).substring(7).toUpperCase();
+      localStorage.setItem("mail", (<HTMLInputElement>document.getElementById("mail")).value);
+      localStorage.setItem("code", r);
       this.motdepasseoublie(r).subscribe(
         event => {
         }
       );
-      localStorage.setItem("mail", (<HTMLInputElement>document.getElementById("mail")).value);
-      localStorage.setItem("code", r);
+
       setTimeout(() => {
-      window.location.href="http://localhost:4200/updatepassword";
+      window.location.href="http://127.0.0.1:4200/updatepassword";
       }, 1500);
     }
     else{
@@ -150,15 +151,7 @@ export class UsersComponent implements OnInit {
 
   }
 
-  mailverification(){
 
-    this.docSer.getuser((<HTMLInputElement>document.getElementById("email")).value).subscribe((data: User) => this.us = data);
-   console.log(this.us);
-    if(this.us != null){
-    this.affichermailexiste=1;
-  }
-
-  }
 
 motdepasseoublie(r){
     var inputValue = (<HTMLInputElement>document.getElementById("mail")).value;

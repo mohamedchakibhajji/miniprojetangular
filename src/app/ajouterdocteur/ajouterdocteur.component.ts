@@ -27,6 +27,10 @@ export class AjouterdocteurComponent implements OnInit {
   }
 
   upload(){
+    if(this.Doctor.name == null && this.Doctor.email == null  && this.Doctor.phone == null  && this.Doctor.password == null  && this.Doctor.city == null && this.Doctor.street == null  && this.Doctor.zipcode == null   && this.Doctor.speciality == null  ){
+      this.toastr.warning('Verifier Les Champs', 'Formulaire Invalide');
+    }
+    else {
     const file = this.InputFile.nativeElement;
     if (file.files && file.files[0]) {
       this.UploadFile = file.files[0];
@@ -49,7 +53,12 @@ export class AjouterdocteurComponent implements OnInit {
         }
       }
     );
+      this.toastr.success('Bienvenue', 'Bienvenur Docteur !');
 
+      setTimeout(() => {
+        window.location.href="http://localhost:4200/adduser";
+      }, 1500);
+    }
   }
 
 
@@ -60,4 +69,6 @@ export class AjouterdocteurComponent implements OnInit {
       observe: 'events'
     });
   }
+
+
 }

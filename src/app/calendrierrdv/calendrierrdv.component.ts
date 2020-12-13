@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {rdv} from "../model/rdv";
 import {DoctorService} from "../shared/doctor.service";
+
+
 
 @Component({
   selector: 'app-calendrierrdv',
@@ -10,7 +12,9 @@ import {DoctorService} from "../shared/doctor.service";
 export class CalendrierrdvComponent implements OnInit {
   listrdv: rdv[];
   dateinput:string;
-  constructor(private doctorservice: DoctorService) { }
+  constructor(private doctorservice: DoctorService  ) {
+
+  }
 
   ngOnInit(): void {
     let today = new Date().toLocaleDateString();

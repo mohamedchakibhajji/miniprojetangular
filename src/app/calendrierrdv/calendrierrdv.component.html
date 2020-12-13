@@ -6,9 +6,10 @@
 </div>
 <div class="col-md-6 col-sm-6">
   <div class="about-info">
-    <input type="date" name="date" style="margin-left: 390px; margin-top: 40px;" (mouseleave)="affichernewrdv()"  [(ngModel)]="dateinput" class="form-controlwow fadeInUp" data-wow-delay="0.1s" >
+    <input type="date" name="date" style="margin-left: 390px; margin-top: 40px;"  [ngStyle]="{'color': 'green'}"  (mouseleave)="affichernewrdv()"  [(ngModel)]="dateinput" class="form-controlwow fadeInUp" data-wow-delay="0.1s">
   </div>
 </div>
+
 
 <table  class="wow fadeInUp table" data-wow-delay="0.1s">
   <thead>
@@ -20,11 +21,12 @@
   </tr>
   </thead>
   <tbody>
-  <tr  *ngFor="let rdv of listrdv; let i= index">
-    <th scope="row">{{rdv.time}}</th>
+  <tr  *ngFor="let rdv of listrdv; let i= index"   appHighlight>
+    <th scope="row" >{{rdv.time}}</th>
     <td>{{rdv.user.firstname}}</td>
     <td>{{rdv.user.lastname}}</td>
     <td>{{rdv.message}}</td>
   </tr>
   </tbody>
 </table>
+

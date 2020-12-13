@@ -47,7 +47,7 @@ if(test == this.codeinput){
           console.log(this.user[0]);
           this.user[0].password = this.passwordinput;
           this.docSer.updatpaseuser(this.user[0].id, this.user[0]).subscribe((data: User) => this.user = data);;
-       window.location.href = "http://localhost:4200/adduser";
+       window.location.href = "http://127.0.0.1:4200/adduser";
         }, 500);
       }
 

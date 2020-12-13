@@ -56,7 +56,7 @@ export class AppComponent {
   sessiondestroy() {
     localStorage.clear();
     window.location.reload();
-    window.location.href="http://localhost:4200/home";
+    window.location.href="http://127.0.0.1:4200/home";
   }
 
 
@@ -70,7 +70,7 @@ export class AppComponent {
     this.docSer.deleteuser(obj.id).subscribe((data: User[]) => this.member = data);
     localStorage.clear();
     window.location.reload();
-    window.location.href="http://localhost:4200/home";
+    window.location.href="http://127.0.0.1:4200/home";
   }
 
 }

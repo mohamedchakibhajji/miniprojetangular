@@ -78,6 +78,7 @@ export class DoctorComponent implements OnInit {
   addcomment(e) {
     if (e.keyCode == 13) {
       this.comm = new commentaire();
+      console.log(JSON.parse(localStorage.getItem('connecteduser')));
       this.comm.user= JSON.parse(localStorage.getItem('connecteduser'));
       var d = new Date();
       var time =d.getHours()+":"+d.getMinutes();

@@ -19,6 +19,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AjouterdocteurComponent } from './ajouterdocteur/ajouterdocteur.component';
 import { CalendrierrdvComponent } from './calendrierrdv/calendrierrdv.component';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -33,13 +35,15 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
     CommentairesComponent,
     AjouterdocteurComponent,
     CalendrierrdvComponent,
-    UpdatepasswordComponent
+    UpdatepasswordComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    HighlightModule,
     FormsModule,
     NgxSocialShareModule,
     CommonModule,
@@ -47,7 +51,14 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
     ToastrModule.forRoot(),
   ],
 
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: {
+        fullLibraryLoader: () => import('highlight.js')
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
